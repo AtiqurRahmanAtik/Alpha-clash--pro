@@ -6,7 +6,7 @@ function hinddenSection(elementId){
     hidden.classList.add('hidden');
 }
 
-//play ground section
+//play ground section remove 
 
 function showSection(playId){
 
@@ -44,3 +44,12 @@ function setBackgroudColor( elementId){
     element.classList.add('bg-orange-400');
     
 }
+
+
+//remove backgorund
+ function removeBackgroudColor(elementId){
+
+  let element = document.getElementById(elementId);
+
+    element.classList.remove('bg-orange-400');
+ }

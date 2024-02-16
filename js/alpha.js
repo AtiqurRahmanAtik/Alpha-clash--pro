@@ -25,7 +25,9 @@ function startGame(){
     let finalAlpha = currentAlpha.innerHTML = alphabet;
     console.log(finalAlpha);
 
-    let bgcolor = setBackgroudColor(alphabet);
+    setBackgroudColor(alphabet);
+
+   
 }
 
 
@@ -40,5 +42,59 @@ function play(){
 }
 
 
+//add evenlistner 
 
+document.addEventListener('keyup',function(event){
+
+   let  PressKe = event.key;
+   console.log(PressKe);
+
+
+   let keyIs = document.getElementById('randonAlpha');
+
+ 
+
+   let mainKey =  keyIs.innerHTML;
+   let upperKey = mainKey.toLowerCase();
+
+//    console.log(PressKe, upperKey);
+
+
+  if(PressKe === upperKey){
+
+    // console.log('you hav press : ',upperKey);
+
+    const life = document.getElementById('score');
+    
+    let lifeScore = life.innerHTML;
+    
+    let score = parseInt(lifeScore);
+    let newScore = score + 1;
+    
+    life.innerHTML = newScore;
+
+    removeBackgroudColor(upperKey);
+    startGame();
+    
+  }
+  else{
+    console.log('lose');
+
+    //life decrement 
+    const life = document.getElementById('life');
+
+    let lifeScore = life.innerHTML ;
+    
+    let lfScore = parseInt(lifeScore);
+
+    let decriScore = lfScore - 1;
+
+    let finalDcriScore =  life.innerHTML = decriScore;
+
+ 
+
+
+  }
+   
+})
 
